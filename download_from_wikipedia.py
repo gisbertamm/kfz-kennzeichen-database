@@ -1,8 +1,12 @@
 #!/usr/bin/python
+# encoding=utf8
 
 import urllib2
 from bs4 import BeautifulSoup
 from proxy_url import proxy_url
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 
 print "Configuring Proxy..."
 proxy = urllib2.ProxyHandler({'https': proxy_url})
@@ -49,5 +53,45 @@ for table in soup.find_all('table'):
                 if len(row_result) > 0:
                     result.append(row_result)
 
+print "Writing dataset.xml..."
+
+dataset = """<!DOCTYPE dataset SYSTEM "dataset.dtd">
+<dataset>
+    <table name="numberplate_codes">
+        <column>id</column>
+        <column>code</column>
+        <column>district</column>
+        <column>district_center</column>
+        <column>state</column>
+        <column>district_wikipedia_url</column>
+        <column>jokes</column>"""
+
+row_template = """
+        <row>
+            <value>%(id)s</value>
+            <value>%(code)s</value>
+            <value>%(district)s</value>
+            <value>%(district_center)s</value>
+            <value>%(state)s</value>
+            <value>%(district_wikipedia_url)s</value>
+            <value>%(jokes)s</value>
+        </row>"""
+
+# prepare the data and add them to the dataset
+id = 0
 for row in result:
-    print row
+    if len(row) == 2: 
+        row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_center':'-', 'state':'-', 'district_wikipedia_url':'TODO', 'jokes':'TODO'}
+    if len(row) == 4: 
+        row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_center':row[2], 'state':row[3], 'district_wikipedia_url':'TODO', 'jokes':'TODO'}
+    dataset += row_template%row_dict
+    id += 1
+
+# close XML
+dataset += """
+</dataset>"""
+
+# write dataset to file
+f = open('dataset.xml','w')
+f.write(dataset)
+f.close()
