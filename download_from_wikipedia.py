@@ -23,29 +23,28 @@ for table in soup.find_all('table'):
     if table.tr.th.get_text() == 'Abk.':
         for row in table.find_all('tr'):
             if row_should_be_cloned > 0:
-                for i in range(row_should_be_cloned):
-                    # create clone
-                    row_result = result[-1]
-                    clone = []
-                    for elem in row_result:
-                        clone.append(elem)
-                    result.append(clone)
+                # create clone
+                row_result = result[-1]
+                clone = []
+                for elem in row_result:
+                    clone.append(elem)
+                result.append(clone)
 
-                    # change clone
-                    for cell in row.find_all('td'):
-                        # overwrite existing values - only the second cell differs
-                        if cell.get_text():
-                            clone[1] = cell.get_text()
+                # change clone
+                for cell in row.find_all('td'):
+                    # overwrite existing values - only the second cell differs
+                    if cell.get_text():
+                        clone[1] = cell.get_text()
                 row_should_be_cloned -= 1
             else:
                 row_result = []
                 for cell in row.find_all('td'):
-                    if cell.get('rowspan') == '2' and cell.parent.name == 'tr':
+                    rowspan = 1
+                    if cell.get('rowspan'):
+                        rowspan = int(cell.get('rowspan'))
+                    if rowspan > 1 and cell.parent.name == 'tr':
                         # clone row later
-                        row_should_be_cloned = 1
-                    if cell.get('rowspan') == '3' and cell.parent.name == 'tr':
-                        # clone row later
-                        row_should_be_cloned = 2
+                        row_should_be_cloned = rowspan - 1
                     row_result.append(cell.get_text())
                 if len(row_result) > 0:
                     result.append(row_result)
