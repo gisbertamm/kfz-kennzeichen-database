@@ -43,7 +43,7 @@ for table in soup.find_all('table'):
                     if cell.get('rowspan'):
                         rowspan = int(cell.get('rowspan'))
                     if rowspan > 1 and cell.parent.name == 'tr':
-                        # clone row later
+                        # clone row later to match the number of lines in rowspan
                         row_should_be_cloned = rowspan - 1
                     row_result.append(cell.get_text())
                 if len(row_result) > 0:
