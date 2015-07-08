@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
-from bs4 import BeautifulSoup
 import urllib2
+from bs4 import BeautifulSoup
 from proxy_url import proxy_url
 
 print "Configuring Proxy..."
