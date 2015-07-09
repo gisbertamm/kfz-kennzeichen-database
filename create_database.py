@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # encoding=utf8
 
-import urllib2
+import urllib2, sqlite3
 from bs4 import BeautifulSoup
 from proxy_url import proxy_url
 import sys
@@ -53,45 +53,26 @@ for table in soup.find_all('table'):
                 if len(row_result) > 0:
                     result.append(row_result)
 
-print "Writing dataset.xml..."
+print "Creating database..."
 
-dataset = """<!DOCTYPE dataset SYSTEM "dataset.dtd">
-<dataset>
-    <table name="numberplate_codes">
-        <column>id</column>
-        <column>code</column>
-        <column>district</column>
-        <column>district_center</column>
-        <column>state</column>
-        <column>district_wikipedia_url</column>
-        <column>jokes</column>"""
+sql_statements = ["drop table if exists numberplate_codes;"] 
+sql_statements.append("create table numberplate_codes (id INTEGER PRIMARY KEY, code TEXT, district TEXT, district_center TEXT, state TEXT, district_wikipedia_url TEXT, jokes TEXT);")
 
-row_template = """
-        <row>
-            <value>%(id)s</value>
-            <value>%(code)s</value>
-            <value>%(district)s</value>
-            <value>%(district_center)s</value>
-            <value>%(state)s</value>
-            <value>%(district_wikipedia_url)s</value>
-            <value>%(jokes)s</value>
-        </row>"""
+row_template = """insert into numberplate_codes values (%(id)s, "%(code)s", "%(district)s", "%(district_center)s", "%(state)s", "%(district_wikipedia_url)s", "%(jokes)s");"""
 
-# prepare the data and add them to the dataset
+# prepare the data and add them to the SQL statement
 id = 0
 for row in result:
     if len(row) == 2: 
         row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_center':'-', 'state':'-', 'district_wikipedia_url':'TODO', 'jokes':'TODO'}
     if len(row) == 4: 
         row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_center':row[2], 'state':row[3], 'district_wikipedia_url':'TODO', 'jokes':'TODO'}
-    dataset += row_template%row_dict
+    sql_statements.append(row_template%row_dict)
     id += 1
 
-# close XML
-dataset += """
-</dataset>"""
-
-# write dataset to file
-f = open('dataset.xml','w')
-f.write(dataset)
-f.close()
+# create and fill database
+connection = sqlite3.connect("NumberplateCodesManager.sqlite")
+for sql_statement in sql_statements:
+    connection.execute(sql_statement)
+connection.commit()
+connection.close()
