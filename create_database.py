@@ -55,10 +55,13 @@ for table in soup.find_all('table'):
 
 print "Creating database..."
 
-sql_statements = ["drop table if exists numberplate_codes;"] 
-sql_statements.append("create table numberplate_codes (id INTEGER PRIMARY KEY, code TEXT, district TEXT, district_center TEXT, state TEXT, district_wikipedia_url TEXT, jokes TEXT);")
+sql_statements = []
+sql_statements.append("CREATE TABLE \"android_metadata\" (\"locale\" TEXT DEFAULT 'de_DE');")
+sql_statements.append("INSERT INTO \"android_metadata\" VALUES ('de_DE')")
+sql_statements.append("DROP TABLE IF EXISTS numberplate_codes;")
+sql_statements.append("CREATE TABLE numberplate_codes (_id INTEGER PRIMARY KEY, code TEXT, district TEXT, district_center TEXT, state TEXT, district_wikipedia_url TEXT, jokes TEXT);")
 
-row_template = """insert into numberplate_codes values (%(id)s, "%(code)s", "%(district)s", "%(district_center)s", "%(state)s", "%(district_wikipedia_url)s", "%(jokes)s");"""
+row_template = """INSERT INTO numberplate_codes VALUES (%(id)s, "%(code)s", "%(district)s", "%(district_center)s", "%(state)s", "%(district_wikipedia_url)s", "%(jokes)s");"""
 
 # prepare the data and add them to the SQL statement
 id = 0
