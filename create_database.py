@@ -42,6 +42,7 @@ for table in soup.find_all('table'):
                 row_should_be_cloned -= 1
             else:
                 row_result = []
+                index = 1
                 for cell in row.find_all('td'):
                     rowspan = 1
                     if cell.get('rowspan'):
@@ -50,6 +51,10 @@ for table in soup.find_all('table'):
                         # clone row later to match the number of lines in rowspan
                         row_should_be_cloned = rowspan - 1
                     row_result.append(cell.get_text())
+                    # add district_wikipedia_url
+                    if index == 2:
+                        row_result.append(cell.a.get('href'))
+                    index += 1
                 if len(row_result) > 0:
                     result.append(row_result)
 
@@ -69,10 +74,10 @@ id = 0
 for row in result:
     # add footnote from Wikipedia site
     row[1] = row[1].replace(")*", " - Ausnahmen bei B, F, G, I, O und Q)")
-    if len(row) == 2: 
-        row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_center':'-', 'state':'-', 'district_wikipedia_url':'TODO', 'jokes':'TODO'}
-    if len(row) == 4:
-        row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_center':row[2], 'state':row[3], 'district_wikipedia_url':'TODO', 'jokes':'TODO'}
+    if len(row) == 3: 
+        row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_center':'-', 'state':'-', 'district_wikipedia_url':'-', 'jokes':'-'}
+    if len(row) == 5:
+        row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_wikipedia_url':row[2], 'district_center':row[3], 'state':row[4], 'jokes':'TODO'}
     sql_statements.append(row_template%row_dict)
     id += 1
 
