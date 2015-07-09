@@ -56,6 +56,7 @@ for table in soup.find_all('table'):
 print "Creating database..."
 
 sql_statements = []
+sql_statements.append("DROP TABLE IF EXISTS \"android_metadata\";")
 sql_statements.append("CREATE TABLE \"android_metadata\" (\"locale\" TEXT DEFAULT 'de_DE');")
 sql_statements.append("INSERT INTO \"android_metadata\" VALUES ('de_DE')")
 sql_statements.append("DROP TABLE IF EXISTS numberplate_codes;")
@@ -66,9 +67,11 @@ row_template = """INSERT INTO numberplate_codes VALUES (%(id)s, "%(code)s", "%(d
 # prepare the data and add them to the SQL statement
 id = 0
 for row in result:
+    # add footnote from Wikipedia site
+    row[1] = row[1].replace(")*", " - Ausnahmen bei B, F, G, I, O und Q)")
     if len(row) == 2: 
         row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_center':'-', 'state':'-', 'district_wikipedia_url':'TODO', 'jokes':'TODO'}
-    if len(row) == 4: 
+    if len(row) == 4:
         row_dict = {'id':id, 'code':row[0], 'district':row[1], 'district_center':row[2], 'state':row[3], 'district_wikipedia_url':'TODO', 'jokes':'TODO'}
     sql_statements.append(row_template%row_dict)
     id += 1
