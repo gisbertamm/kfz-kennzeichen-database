@@ -419,3 +419,4 @@ INSERT INTO jokes VALUES (418, "WW", "Wildes Wichtelchen");
 INSERT INTO jokes VALUES (419, "WZL", "Wanzen, Zecken, Läuse");
 INSERT INTO jokes VALUES (420, "ZE", "Zum Erbarmen");
 INSERT INTO jokes VALUES (421, "ZS", "Ziemlich scheiße");
+INSERT INTO jokes VALUES (422, "BAR", "Bauer auf Reisen");
