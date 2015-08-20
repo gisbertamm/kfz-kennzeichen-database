@@ -29,6 +29,7 @@ try:
     data = cur.fetchall()
 
     for entry in data:
+        print "Code: " + entry[0]
         if entry[1] != "-":
             url = wiki_base_url + entry[1]
             print "Downloading " + url + " ..."
@@ -37,21 +38,32 @@ try:
 
             print "Parsing site for " + entry[1] + " ..."
             soup = BeautifulSoup(html, 'html.parser')
+
+            #save all image urls
+            image_urls = {}
             for img in soup.find_all('img'):
                 if img.get('alt'):
                     if img.get('alt').startswith("Wappen"):
-                        image_url = "https:" + img.get('src')
-                        # pick only one size
-                        if '140px' in img.get('src'):
-                            print "Downloading image " + image_url + " ..."
-                            img_response = urllib2.urlopen(image_url)
-                            filename = entry[0].lower() + ".png"
-                            for key in replacement_dict:
-                                filename = filename.replace(key, replacement_dict[key])
-                            print "Writing " + filename + " ..."
-                            fh = open(os.path.join(script_dir, "./crests/" + filename),'wb')
-                            fh.write(img_response.read())
-                            fh.close()
+                        image_urls[int(img.get('width'))] = "https:" + img.get('src')
+
+            if image_urls: # dict is not empty
+                # pick only biggest size
+                image_url = image_urls[max(image_urls.keys())]
+                print "Downloading image " + image_url + " ..."
+                img_response = urllib2.urlopen(image_url)
+                filename = entry[0].lower() + ".png"
+                for key in replacement_dict:
+                    filename = filename.replace(key, replacement_dict[key])
+                path = os.path.join(script_dir, "./crests/" + filename)
+                if os.path.exists(path):
+                    print "File exists: " + path
+                else:
+                    print "Writing " + path + " ..."
+                    fh = open(path,'wb')
+                    fh.write(img_response.read())
+                    fh.close()
+            else:
+                print "TODO dict is empty"
 
 except sqlite3.Error, e:
 
