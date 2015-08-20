@@ -51,7 +51,7 @@ try:
                 image_url = image_urls[max(image_urls.keys())]
                 print "Downloading image " + image_url + " ..."
                 img_response = urllib2.urlopen(image_url)
-                filename = entry[0].lower() + ".png"
+                filename = entry[0].lower() + image_url[-4:]
                 for key in replacement_dict:
                     filename = filename.replace(key, replacement_dict[key])
                 path = os.path.join(script_dir, "./crests/" + filename)
