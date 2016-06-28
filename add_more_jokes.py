@@ -9,7 +9,7 @@ import csv, sqlite3
 
 con = sqlite3.connect("NumberplateCodesManager.sqlite")
 
-with open('jokes_for_v1.0.5.csv', 'rb') as csvfile:
+with open('jokes_for_v1.0.6.csv', 'rb') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=';', quotechar='|')
     for row in csvreader:
         print
