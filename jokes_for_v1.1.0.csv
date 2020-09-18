@@ -1,4 +1,5 @@
 BLK; Blinker links kaputt
+BLK; Beklopptenlandkreis
 BN; Bonner Narr
 BÖ; Behelfs Österreicher
 BOR; Bauer ohne Rücksicht
@@ -8,16 +9,19 @@ BS; Besengte Sau
 BSB; Besoffene Bauern
 BT; Blöder Trottel
 BT; Blinde Tunte
+BT; bin traumatisiert
 BT; Blaue Tanne
 BT; Bayern Trottel
 BU; Bauer unterwegs
 BÜR; Bauern überholen rechts
 BÜR; Bauer übt Rally
+BÜZ; bin überzuckert
 COE; Chaos ohne Ende
 CLP; Clericales LumpenPack
 CLP; Charakterloser Perverser
 D; Dussel
 DA; Dämlicher Anfänger
+DE; Deutsche Elite
 DAN; Dein Ableben naht
 DBR; Dumme Bauern rasen
 DBR; Der blöde Rest
@@ -39,6 +43,8 @@ DZ; Dorf Zombies
 DZ; Dämliche Zicken
 DZ; Dumme Zecken
 EA; Echtes Arschloch
+EE; Einsame Else
+EE; Extrem Eilig
 ESA; Eisenacher sucht Aldi
 EBE; Esel bleibt Esel
 ED; Entsprungener Depp
@@ -68,6 +74,7 @@ FO; Für Ossis
 FR; Fahrender Rambo
 FR; Fieser Raser
 FR; Fundiger Raudi
+FRI; Fahr rechts Idiot
 FS; Fährst scheisse
 FÜ; Fahrer übt
 GAP; Geh Aufs Pedal!
@@ -105,6 +112,7 @@ HB; Halb Besoffener
 HBN; Habe nichts
 HBN; Honneckers böse Nachkommen
 HD; Halbdeppen
+HD; Hohler Dummkopf
 HEI; Hilfe ein Idiot
 HG; Höchste Gefahr
 HG; hirngeschädigt
@@ -126,6 +134,7 @@ HP; Heil- und Plegeanstalt
 HR; Hirnlose Rindviecher
 HR; Hessisches Rindvieh
 HR; Hessen Ranger
+HR; Hinterm Ratio
 HRO; Hirnlos rasen Ossis
 HS; Heisse Sau
 HS; Hirnloses Schwein
@@ -215,7 +224,8 @@ MS; Meistens schicka
 MSP; Meespetzer
 MTL; Mutantenland
 MTL; MuTtis Lieblinge
-MZG; Mir zugele gemuetlich
+MZG; Mir zugele gemütlich
+NB; Nur Bekloppte
 NEA; Neandertaler
 NEU; Noch ein Unmensch
 NEU; Nicht erwachen, untenrum.
@@ -224,6 +234,7 @@ NF; Neufundland
 NF; No Future
 NF; Norden Forever
 NMS; Nie mit streiten
+NMS; Nie Mehr saufen
 NOH; Nasen ohne Hosen
 NOM; Nimm Oma mit
 NVP; Noch vor Polen
@@ -272,6 +283,7 @@ RA; Rasende Arschlöcher
 RD; Riesen Dussel
 RS; Rasende Sau
 RV; Rindviecher
+RW; Rasende Wildsau
 RZ; Rüde Zeitgenossen
 RZ; Rübenzüchter
 RZ; Rattenzüchter
@@ -338,6 +350,7 @@ WAF; Wilder Affe fährt
 WAK; Wer anders kann`s?
 WBS; War bei Stasi
 WEB; Wieder ein Bekloppter
+WOL; Warnung oller Landwirt
 WF; Wilder Fahrer
 WHV; Wir haben Vorfahrt
 WL; Wahnsinniger Landwirt
@@ -353,7 +366,9 @@ WT; Wäldertrottel
 WT; Wilde Tiere
 WTM; Wir trinken Milch
 WTM; Wir töten Menschen
+WTM; Wir transportieren Mist
 WÜ; Weiter üben!
+WÜ; wirst überholt
 WUG; Wild Und Gefährlich
 WUN; Waldmensch unter Naturschutz
 WUN; Wildsau unter Narkose
