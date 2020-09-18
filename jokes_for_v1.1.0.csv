@@ -1,3 +1,10 @@
+0; 0 Ahnung
+AA; Alte Arschlöcher
+AIC; Allgemeiner Idiotenclub
+ALF; Außerirdische Lebensform
+AS; alte Schlaferer
+B; begabt
+BAR; Bulle am Randalieren
 BLK; Blinker links kaputt
 BLK; Beklopptenlandkreis
 BN; Bonner Narr
@@ -39,21 +46,23 @@ DÜW; Depp übt wieder
 DÜW; Doofe üben wieder
 DÜW; Dann üb weiter
 DÜW; Dummer überdrehter Winzer
+DUD; dauernd unter Doofen
 DZ; Dorf Zombies
 DZ; Dämliche Zicken
 DZ; Dumme Zecken
 EA; Echtes Arschloch
 EE; Einsame Else
 EE; Extrem Eilig
-ESA; Eisenacher sucht Aldi
 EBE; Esel bleibt Esel
 ED; Entsprungener Depp
+EIC; Echt irre Christen
 EL; Entwicklungsland
 EM; Ewig meschugge
 EN; Europas Nieten
 ERB; Erste Rate bezahlt
 ERH; Erlangen-Hinterland
 ES; Ersatz-Stuttgarter
+ESA; Eisenacher sucht Aldi
 ESW; Eine Sau weniger
 ESW; Ehrlich Schon Westen
 EU; Esel unterwegs
@@ -71,6 +80,7 @@ FFB; Fünf Flaschen Bier
 FN; Führerschein Nebensache
 FO; Fahrender Ochse
 FO; Für Ossis
+FOR; Für Ossis reichts
 FR; Fahrender Rambo
 FR; Fieser Raser
 FR; Fundiger Raudi
@@ -84,6 +94,8 @@ GER; Gauner, Einbrecher und Räuber
 GF; Geisterfahrer
 GF; Gefährlicher Fahrer
 GG; Grosse Gefahr
+GG; Göttergate
+GG; Grimmige Geisel
 GG; Geiler Gockel
 GG; Great Gangster
 GK; Geisteskranker
@@ -109,6 +121,7 @@ HAL; Hirnamputierter am Lenker
 HAS; Hirni am Steuer
 HAS; Heute auch schrecklich
 HB; Halb Besoffener
+HB; Heiliger Bimbam
 HBN; Habe nichts
 HBN; Honneckers böse Nachkommen
 HD; Halbdeppen
@@ -122,6 +135,7 @@ HH; Halbes Hähnchen
 HI; Halb-Idiot
 HIG; Habe Information geliefert
 HL; Hamburg Land
+HN; Hirn nutzen
 HO; Hornochse
 HO; Halber Ossi
 HOM; Hirn Ohne Masse
@@ -159,10 +173,13 @@ K; Kohlköpfe
 K; kölscher Klüngel
 KA; Keine Ahnung
 KB; Kuh-Bauer
+KB; Krüppelbauer
 KB; Komplette Blödmänner
 KC; Keine Chance
+KE; Kepler Enten
 KEH; Kein eigenes Hirn
 KF; Krimineller Fahrer
+KF; Keine Freunde
 KG; Kein Geld
 KG; Kein Geist
 KG; Kein Gehirn
@@ -173,6 +190,7 @@ KLE; Keiner lebt ewig
 KÖT; Keine öffentliche Toilette
 KÖN; Kann öfters nichts
 KÖN; Kein öffentlicher Nutzen
+KS; kleiner Scheißer
 KÜN; Kraftfahrer übt noch
 LAU; lauter Arschlöcher unterwegs
 LAU; Links Abbiegen Unfall
@@ -187,6 +205,8 @@ LDK; Lauter Dumm-Köpfe
 LEV; Leider etwas verrückt
 LI; Lauter Idioten
 LIP; Lästiger inkompetenter Penner
+LIP; Landwirt in Panik
+LIP; Leben im Paradies
 LL; Lalli, Lahmarschiger!
 LN; Lachnummer
 LOS; Leben ohne Spass
@@ -207,7 +227,10 @@ MA; Müll-Abfuhr
 MD; Meilenweit doof
 MD; Magdeburger Dorfjacken
 ME; Motorisierter Esel
-MGN; Meiningen Möchte GerN
+MED; Merkt Euch Das
+MGN; Möchtegern
+MI; Müllinsel
+MI; Mistigel
 MIL; Mit Idioten leben
 MK; Mistkutscher
 MK; Miserabler Kraftfahrer
@@ -242,6 +265,7 @@ NW; Nackte Wahnsinnige
 NWM; Nichts Wissender Mensch
 OA; Oberarsch
 OAL; Oberarschloch
+OAL; Ochs am Lenker
 OBG; Ossis Brauchen Geld
 OD; Ohne Durchblick
 OE; ooch eener
@@ -263,6 +287,7 @@ OL; Ordentliche Leute
 OL;  Oller Lümmel
 OK; Ohne Kopf
 OK; Ohne Kommentar
+OPR; ohne Plan Reisen
 OR; Oberrindvieh
 OS; Ordinäre Sau
 OSL; Oberschlauer Lübbenauer
@@ -280,10 +305,12 @@ PLÖ; Gott schütze uns vor Wind und Böen und Fahrern aus dem Kreise Plön
 PS; Pfälzisch-Sibirien
 QLB; Querlenkender Blödmann
 RA; Rasende Arschlöcher
+RC; Richtiger Chaot
 RD; Riesen Dussel
 RS; Rasende Sau
 RV; Rindviecher
 RW; Rasende Wildsau
+RZ; Ratenzahler
 RZ; Rüde Zeitgenossen
 RZ; Rübenzüchter
 RZ; Rattenzüchter
@@ -302,6 +329,7 @@ SE; Saumäßiger Egoist
 SFA; Sau fährt Auto
 SFA; Säufer Fährt Auto
 SFA; So Fahren Arschlöcher
+SFT; Schwein fährt Trabi
 SHG; Säufer, Huren und Ganoven
 SHG; Seine Hoheit Grüßt 
 SHG; Sperrzone heute geöffnet
@@ -328,6 +356,7 @@ ST; Süd-Texas
 ST; Schweine-Taxi
 STA; Scheisse, Totaler Anfänger
 STD; Sie töten Dich
+STD; Schönster Teil Deutschlands
 SU; Sau unterwegs
 SU; Suche Unfall
 SÜW; Säufer übers Wochenende
@@ -347,7 +376,8 @@ VIE; Vollidiot im Einsatz
 VIE; Very Important European
 VS; Verirrter Schwachkopf
 WAF; Wilder Affe fährt
-WAK; Wer anders kann`s?
+WAF; Wir Armen Fischköpfe
+WAK; Wer anders kanns?
 WBS; War bei Stasi
 WEB; Wieder ein Bekloppter
 WOL; Warnung oller Landwirt
@@ -373,6 +403,7 @@ WUG; Wild Und Gefährlich
 WUN; Waldmensch unter Naturschutz
 WUN; Wildsau unter Narkose
 WW; Wilde Wutz
+WW; Wilder Westen
 WZ; Wilde Zecher
 WZL; Wanzen, Zecken, Läuse
 WZL; Wir zeugen Looser
